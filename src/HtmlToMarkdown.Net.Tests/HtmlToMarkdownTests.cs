@@ -686,5 +686,11 @@ namespace HtmlToMarkdown.Net.Tests
                                   + "\n\n";
             }
         }
-    }
+
+        [Fact]
+        public void should_be_able_to_convert_elements_with_attributes_containing_hyphen()
+        {
+            Assert.Equal("foo\n\n", _converter.Convert("<div data-key1=\"value1\" data-key2=\"value2\">foo</div>"));
+        }
+	}
 }
